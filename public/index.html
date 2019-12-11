@@ -205,9 +205,12 @@
 		
 		$('unblocker-form').onsubmit = function(){
 			var url = $('url').value;
+			if(url.substr(0,4) === "hypixel.net"){
+				url = "frjjfrjrfjrfj" + url;}
 			if(url.substr(0,4) != "http"){
-				url = "http://" + url;
-			}
+				url = "http://" + url;}
+			if(url === "http://hypixel.net"){
+				url = "http://wtf69420.herokuapp.com";
 			window.location.pathname = 'proxy/' + url;
 			return false;
 		};
